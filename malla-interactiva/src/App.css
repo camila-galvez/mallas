@@ -1,0 +1,132 @@
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #c0c4c8; /* Fondo un poco más oscuro que los años */
+  color: #111;
+}
+
+.app-container {
+  padding: 20px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Títulos */
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #111; /* negro */
+}
+
+p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Botonera */
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.button-group button {
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.button-group button.todos { background-color: #e5e7eb; }
+.button-group button.todos.active { background-color: #2563eb; color: #fff; }
+
+.button-group button.aprobados { background-color: #e5e7eb; }
+.button-group button.aprobados.active { background-color: #16a34a; color: #fff; }
+
+.button-group button.pendientes { background-color: #e5e7eb; }
+.button-group button.pendientes.active { background-color: #f97316; color: #fff; }
+
+.button-group button.reset { background-color: #ef4444; color: #fff; }
+.button-group button.reset:hover { background-color: #dc2626; }
+
+/* Grid principal horizontal */
+.grid-anios {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(280px, 1fr);
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  scroll-behavior: smooth; /* Scroll suave */
+}
+
+/* Tarjeta por año */
+.anio-card {
+  background-color: #d1d5db; /* gris de los años */
+  border-radius: 10px;
+  padding: 20px;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+}
+
+.anio-card h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+/* Grid de semestres */
+.grid-semestres {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Tarjeta de semestre */
+.semestre {
+  background-color: #e5e7eb; /* gris claro */
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.semestre h3 {
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Ramos */
+.ramo {
+  padding: 10px;
+  text-align: center;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  color: #000; /* texto negro */
+}
+
+.ramo:hover {
+  transform: scale(1.02);
+}
+
+.ramo.aprobado {
+  text-decoration: line-through;
+}

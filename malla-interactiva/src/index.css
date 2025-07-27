@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Reset básico */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f9fafb;
+  color: #111;
+}
+
+/* Contenedor principal */
+.app-container {
+  padding: 20px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Títulos */
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Botonera */
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.button-group button {
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+/* Botones de filtros */
+.button-group button.todos {
+  background-color: #e5e7eb;
+}
+.button-group button.todos.active {
+  background-color: #2563eb;
+  color: #fff;
+}
+
+.button-group button.aprobados {
+  background-color: #e5e7eb;
+}
+.button-group button.aprobados.active {
+  background-color: #16a34a;
+  color: #fff;
+}
+
+.button-group button.pendientes {
+  background-color: #e5e7eb;
+}
+.button-group button.pendientes.active {
+  background-color: #f97316;
+  color: #fff;
+}
+
+.button-group button.reset {
+  background-color: #ef4444;
+  color: #fff;
+}
+.button-group button.reset:hover {
+  background-color: #dc2626;
+}
+
+/* Grid principal */
+.grid-anios {
+  display: grid;
+  gap: 20px;
+}
+
+/* Tarjeta por año */
+.anio-card {
+  background-color: #f1f5f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.anio-card h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+/* Grid de semestres */
+.grid-semestres {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+/* Tarjeta de semestre */
+.semestre {
+  background-color: #e0f2fe;
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.semestre h3 {
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Lista de ramos */
+.ramo {
+  padding: 10px;
+  text-align: center;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+/* Estado por color */
+.ramo.default {
+  background-color: #d8b4fe; /* lila */
+  color: #000;
+}
+.ramo.pendiente {
+  background-color: #fb923c; /* naranja */
+  color: #fff;
+}
+.ramo.aprobado {
+  background-color: #22c55e; /* verde */
+  color: #fff;
+  text-decoration: line-through;
+}
+
+/* Efecto click */
+.ramo:hover {
+  transform: scale(1.02);
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .grid-anios {
+    grid-template-columns: 1fr;
+  }
+}
